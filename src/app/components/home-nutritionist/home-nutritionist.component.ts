@@ -29,13 +29,13 @@ export class HomeNutritionistComponent implements OnInit {
         console.log('Risposta ricevuta');
         if (response != null) {
             this.playerList=response;
-            this.playerList.splice(this.playerList.findIndex(user => user.type === "admin"),1);
-            var b = this.playerList.filter(e => e.type === "trainer");
-            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.type === f.type),1));
-            var b = this.playerList.filter(e => e.type === "nutritionist");
-            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.type === f.type),1));
-            var b = this.playerList.filter(e => e.type === "pending");
-            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.type === f.type),1));
+            this.playerList.splice(this.playerList.findIndex(user => user.authorities === "admin"),1);
+            var b = this.playerList.filter(e => e.authorities === "trainer");
+            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.authorities === f.authorities),1));
+            var b = this.playerList.filter(e => e.authorities === "nutritionist");
+            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.authorities === f.authorities),1));
+            var b = this.playerList.filter(e => e.authorities === "pending");
+            b.forEach(f => this.playerList.splice(this.playerList.findIndex(e => e.authorities === f.authorities),1));
              
             console.log(this.playerList);
         }

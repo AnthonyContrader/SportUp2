@@ -13,6 +13,7 @@ import { Performance } from 'src/app/models/Performance';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import { Daily } from 'src/app/models/Daily';
+import { UserDTO } from 'src/app/dto/UserDTO';
 
 @Component({
   selector: 'app-home-player',
@@ -21,7 +22,7 @@ import { Daily } from 'src/app/models/Daily';
 })
 export class HomePlayerComponent implements OnInit {
   idUser: number;
-  userList : User[];
+  userList : UserDTO;
   user:User;
   public player: Player;
   public training: Training;
