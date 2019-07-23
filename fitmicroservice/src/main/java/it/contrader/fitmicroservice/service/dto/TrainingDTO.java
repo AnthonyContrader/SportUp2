@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A DTO for the Diet entity.
+ * A DTO for the Training entity.
  */
-public class DietDTO implements Serializable {
+public class TrainingDTO implements Serializable {
 
     private Long id;
 
@@ -107,11 +107,11 @@ public class DietDTO implements Serializable {
             return false;
         }
 
-        DietDTO dietDTO = (DietDTO) o;
-        if (dietDTO.getId() == null || getId() == null) {
+        TrainingDTO trainingDTO = (TrainingDTO) o;
+        if (trainingDTO.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), dietDTO.getId());
+        return Objects.equals(getId(), trainingDTO.getId());
     }
 
     @Override
@@ -121,7 +121,7 @@ public class DietDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "DietDTO{" +
+        return "TrainingDTO{" +
             "id=" + getId() +
             ", monday='" + getMonday() + "'" +
             ", tuesday='" + getTuesday() + "'" +

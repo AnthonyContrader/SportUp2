@@ -5,8 +5,7 @@
     "fields": [
         {
             "fieldName": "monday",
-            "fieldType": "String",
-            "fieldValidateRules": []
+            "fieldType": "String"
         },
         {
             "fieldName": "tuesday",
@@ -37,11 +36,11 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20190607142757",
+    "changelogDate": "20190607143709",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",
-    "entityTableName": "diet",
+    "entityTableName": "training",
     "jpaMetamodelFiltering": false,
     "pagination": "pagination",
     "microserviceName": "fitmicroservice"

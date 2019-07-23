@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class DietResource {
      */
     @PostMapping("/diets")
     @Timed
-    public ResponseEntity<DietDTO> createDiet(@Valid @RequestBody DietDTO dietDTO) throws URISyntaxException {
+    public ResponseEntity<DietDTO> createDiet(@RequestBody DietDTO dietDTO) throws URISyntaxException {
         log.debug("REST request to save Diet : {}", dietDTO);
         if (dietDTO.getId() != null) {
             throw new BadRequestAlertException("A new diet cannot already have an ID", ENTITY_NAME, "idexists");
@@ -71,7 +70,7 @@ public class DietResource {
      */
     @PutMapping("/diets")
     @Timed
-    public ResponseEntity<DietDTO> updateDiet(@Valid @RequestBody DietDTO dietDTO) throws URISyntaxException {
+    public ResponseEntity<DietDTO> updateDiet(@RequestBody DietDTO dietDTO) throws URISyntaxException {
         log.debug("REST request to update Diet : {}", dietDTO);
         if (dietDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

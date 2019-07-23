@@ -1,31 +1,49 @@
-package it.contrader.fitmicroservice.service.dto;
+package it.contrader.fitmicroservice.domain;
+
+
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A DTO for the Diet entity.
+ * A Training.
  */
-public class DietDTO implements Serializable {
+@Entity
+@Table(name = "training")
+public class Training implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "monday")
     private String monday;
 
+    @Column(name = "tuesday")
     private String tuesday;
 
+    @Column(name = "wednesday")
     private String wednesday;
 
+    @Column(name = "thursday")
     private String thursday;
 
+    @Column(name = "friday")
     private String friday;
 
+    @Column(name = "saturday")
     private String saturday;
 
+    @Column(name = "sunday")
     private String sunday;
 
+    @Column(name = "id_player")
     private Integer idPlayer;
 
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -38,12 +56,22 @@ public class DietDTO implements Serializable {
         return monday;
     }
 
+    public Training monday(String monday) {
+        this.monday = monday;
+        return this;
+    }
+
     public void setMonday(String monday) {
         this.monday = monday;
     }
 
     public String getTuesday() {
         return tuesday;
+    }
+
+    public Training tuesday(String tuesday) {
+        this.tuesday = tuesday;
+        return this;
     }
 
     public void setTuesday(String tuesday) {
@@ -54,12 +82,22 @@ public class DietDTO implements Serializable {
         return wednesday;
     }
 
+    public Training wednesday(String wednesday) {
+        this.wednesday = wednesday;
+        return this;
+    }
+
     public void setWednesday(String wednesday) {
         this.wednesday = wednesday;
     }
 
     public String getThursday() {
         return thursday;
+    }
+
+    public Training thursday(String thursday) {
+        this.thursday = thursday;
+        return this;
     }
 
     public void setThursday(String thursday) {
@@ -70,12 +108,22 @@ public class DietDTO implements Serializable {
         return friday;
     }
 
+    public Training friday(String friday) {
+        this.friday = friday;
+        return this;
+    }
+
     public void setFriday(String friday) {
         this.friday = friday;
     }
 
     public String getSaturday() {
         return saturday;
+    }
+
+    public Training saturday(String saturday) {
+        this.saturday = saturday;
+        return this;
     }
 
     public void setSaturday(String saturday) {
@@ -86,6 +134,11 @@ public class DietDTO implements Serializable {
         return sunday;
     }
 
+    public Training sunday(String sunday) {
+        this.sunday = sunday;
+        return this;
+    }
+
     public void setSunday(String sunday) {
         this.sunday = sunday;
     }
@@ -94,9 +147,15 @@ public class DietDTO implements Serializable {
         return idPlayer;
     }
 
+    public Training idPlayer(Integer idPlayer) {
+        this.idPlayer = idPlayer;
+        return this;
+    }
+
     public void setIdPlayer(Integer idPlayer) {
         this.idPlayer = idPlayer;
     }
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {
@@ -106,12 +165,11 @@ public class DietDTO implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-
-        DietDTO dietDTO = (DietDTO) o;
-        if (dietDTO.getId() == null || getId() == null) {
+        Training training = (Training) o;
+        if (training.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), dietDTO.getId());
+        return Objects.equals(getId(), training.getId());
     }
 
     @Override
@@ -121,7 +179,7 @@ public class DietDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "DietDTO{" +
+        return "Training{" +
             "id=" + getId() +
             ", monday='" + getMonday() + "'" +
             ", tuesday='" + getTuesday() + "'" +

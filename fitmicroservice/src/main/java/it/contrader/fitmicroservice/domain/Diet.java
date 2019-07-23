@@ -2,7 +2,6 @@ package it.contrader.fitmicroservice.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -20,26 +19,28 @@ public class Diet implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "day")
-    private String day;
+    @Column(name = "monday")
+    private String monday;
 
-    @Column(name = "breakfast")
-    private String breakfast;
+    @Column(name = "tuesday")
+    private String tuesday;
 
-    @Column(name = "snack")
-    private String snack;
+    @Column(name = "wednesday")
+    private String wednesday;
 
-    @Column(name = "lunch")
-    private String lunch;
+    @Column(name = "thursday")
+    private String thursday;
 
-    @Column(name = "snack_afternoon")
-    private String snackAfternoon;
+    @Column(name = "friday")
+    private String friday;
 
-    @Column(name = "dinner")
-    private String dinner;
+    @Column(name = "saturday")
+    private String saturday;
 
-    @NotNull
-    @Column(name = "id_player", nullable = false)
+    @Column(name = "sunday")
+    private String sunday;
+
+    @Column(name = "id_player")
     private Integer idPlayer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -51,82 +52,95 @@ public class Diet implements Serializable {
         this.id = id;
     }
 
-    public String getDay() {
-        return day;
+    public String getMonday() {
+        return monday;
     }
 
-    public Diet day(String day) {
-        this.day = day;
+    public Diet monday(String monday) {
+        this.monday = monday;
         return this;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setMonday(String monday) {
+        this.monday = monday;
     }
 
-    public String getBreakfast() {
-        return breakfast;
+    public String getTuesday() {
+        return tuesday;
     }
 
-    public Diet breakfast(String breakfast) {
-        this.breakfast = breakfast;
+    public Diet tuesday(String tuesday) {
+        this.tuesday = tuesday;
         return this;
     }
 
-    public void setBreakfast(String breakfast) {
-        this.breakfast = breakfast;
+    public void setTuesday(String tuesday) {
+        this.tuesday = tuesday;
     }
 
-    public String getSnack() {
-        return snack;
+    public String getWednesday() {
+        return wednesday;
     }
 
-    public Diet snack(String snack) {
-        this.snack = snack;
+    public Diet wednesday(String wednesday) {
+        this.wednesday = wednesday;
         return this;
     }
 
-    public void setSnack(String snack) {
-        this.snack = snack;
+    public void setWednesday(String wednesday) {
+        this.wednesday = wednesday;
     }
 
-    public String getLunch() {
-        return lunch;
+    public String getThursday() {
+        return thursday;
     }
 
-    public Diet lunch(String lunch) {
-        this.lunch = lunch;
+    public Diet thursday(String thursday) {
+        this.thursday = thursday;
         return this;
     }
 
-    public void setLunch(String lunch) {
-        this.lunch = lunch;
+    public void setThursday(String thursday) {
+        this.thursday = thursday;
     }
 
-    public String getSnackAfternoon() {
-        return snackAfternoon;
+    public String getFriday() {
+        return friday;
     }
 
-    public Diet snackAfternoon(String snackAfternoon) {
-        this.snackAfternoon = snackAfternoon;
+    public Diet friday(String friday) {
+        this.friday = friday;
         return this;
     }
 
-    public void setSnackAfternoon(String snackAfternoon) {
-        this.snackAfternoon = snackAfternoon;
+    public void setFriday(String friday) {
+        this.friday = friday;
     }
 
-    public String getDinner() {
-        return dinner;
+    public String getSaturday() {
+        return saturday;
     }
 
-    public Diet dinner(String dinner) {
-        this.dinner = dinner;
+    public Diet saturday(String saturday) {
+        this.saturday = saturday;
         return this;
     }
 
-    public void setDinner(String dinner) {
-        this.dinner = dinner;
+    public void setSaturday(String saturday) {
+        this.saturday = saturday;
+    }
+
+    public String getSunday() {
+        return sunday;
+    }
+
+    public Diet sunday(String sunday) {
+        this.sunday = sunday;
+        return this;
+    }
+
+    public void setSunday(String sunday) {
+        this.sunday = sunday;
     }
 
     public Integer getIdPlayer() {
@@ -167,12 +181,13 @@ public class Diet implements Serializable {
     public String toString() {
         return "Diet{" +
             "id=" + getId() +
-            ", day='" + getDay() + "'" +
-            ", breakfast='" + getBreakfast() + "'" +
-            ", snack='" + getSnack() + "'" +
-            ", lunch='" + getLunch() + "'" +
-            ", snackAfternoon='" + getSnackAfternoon() + "'" +
-            ", dinner='" + getDinner() + "'" +
+            ", monday='" + getMonday() + "'" +
+            ", tuesday='" + getTuesday() + "'" +
+            ", wednesday='" + getWednesday() + "'" +
+            ", thursday='" + getThursday() + "'" +
+            ", friday='" + getFriday() + "'" +
+            ", saturday='" + getSaturday() + "'" +
+            ", sunday='" + getSunday() + "'" +
             ", idPlayer=" + getIdPlayer() +
             "}";
     }

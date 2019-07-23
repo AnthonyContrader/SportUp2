@@ -42,23 +42,26 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = FitmicroserviceApp.class)
 public class DietResourceIntTest {
 
-    private static final String DEFAULT_DAY = "AAAAAAAAAA";
-    private static final String UPDATED_DAY = "BBBBBBBBBB";
+    private static final String DEFAULT_MONDAY = "AAAAAAAAAA";
+    private static final String UPDATED_MONDAY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_BREAKFAST = "AAAAAAAAAA";
-    private static final String UPDATED_BREAKFAST = "BBBBBBBBBB";
+    private static final String DEFAULT_TUESDAY = "AAAAAAAAAA";
+    private static final String UPDATED_TUESDAY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_SNACK = "AAAAAAAAAA";
-    private static final String UPDATED_SNACK = "BBBBBBBBBB";
+    private static final String DEFAULT_WEDNESDAY = "AAAAAAAAAA";
+    private static final String UPDATED_WEDNESDAY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LUNCH = "AAAAAAAAAA";
-    private static final String UPDATED_LUNCH = "BBBBBBBBBB";
+    private static final String DEFAULT_THURSDAY = "AAAAAAAAAA";
+    private static final String UPDATED_THURSDAY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_SNACK_AFTERNOON = "AAAAAAAAAA";
-    private static final String UPDATED_SNACK_AFTERNOON = "BBBBBBBBBB";
+    private static final String DEFAULT_FRIDAY = "AAAAAAAAAA";
+    private static final String UPDATED_FRIDAY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_DINNER = "AAAAAAAAAA";
-    private static final String UPDATED_DINNER = "BBBBBBBBBB";
+    private static final String DEFAULT_SATURDAY = "AAAAAAAAAA";
+    private static final String UPDATED_SATURDAY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUNDAY = "AAAAAAAAAA";
+    private static final String UPDATED_SUNDAY = "BBBBBBBBBB";
 
     private static final Integer DEFAULT_ID_PLAYER = 1;
     private static final Integer UPDATED_ID_PLAYER = 2;
@@ -109,12 +112,13 @@ public class DietResourceIntTest {
      */
     public static Diet createEntity(EntityManager em) {
         Diet diet = new Diet()
-            .day(DEFAULT_DAY)
-            .breakfast(DEFAULT_BREAKFAST)
-            .snack(DEFAULT_SNACK)
-            .lunch(DEFAULT_LUNCH)
-            .snackAfternoon(DEFAULT_SNACK_AFTERNOON)
-            .dinner(DEFAULT_DINNER)
+            .monday(DEFAULT_MONDAY)
+            .tuesday(DEFAULT_TUESDAY)
+            .wednesday(DEFAULT_WEDNESDAY)
+            .thursday(DEFAULT_THURSDAY)
+            .friday(DEFAULT_FRIDAY)
+            .saturday(DEFAULT_SATURDAY)
+            .sunday(DEFAULT_SUNDAY)
             .idPlayer(DEFAULT_ID_PLAYER);
         return diet;
     }
@@ -140,12 +144,13 @@ public class DietResourceIntTest {
         List<Diet> dietList = dietRepository.findAll();
         assertThat(dietList).hasSize(databaseSizeBeforeCreate + 1);
         Diet testDiet = dietList.get(dietList.size() - 1);
-        assertThat(testDiet.getDay()).isEqualTo(DEFAULT_DAY);
-        assertThat(testDiet.getBreakfast()).isEqualTo(DEFAULT_BREAKFAST);
-        assertThat(testDiet.getSnack()).isEqualTo(DEFAULT_SNACK);
-        assertThat(testDiet.getLunch()).isEqualTo(DEFAULT_LUNCH);
-        assertThat(testDiet.getSnackAfternoon()).isEqualTo(DEFAULT_SNACK_AFTERNOON);
-        assertThat(testDiet.getDinner()).isEqualTo(DEFAULT_DINNER);
+        assertThat(testDiet.getMonday()).isEqualTo(DEFAULT_MONDAY);
+        assertThat(testDiet.getTuesday()).isEqualTo(DEFAULT_TUESDAY);
+        assertThat(testDiet.getWednesday()).isEqualTo(DEFAULT_WEDNESDAY);
+        assertThat(testDiet.getThursday()).isEqualTo(DEFAULT_THURSDAY);
+        assertThat(testDiet.getFriday()).isEqualTo(DEFAULT_FRIDAY);
+        assertThat(testDiet.getSaturday()).isEqualTo(DEFAULT_SATURDAY);
+        assertThat(testDiet.getSunday()).isEqualTo(DEFAULT_SUNDAY);
         assertThat(testDiet.getIdPlayer()).isEqualTo(DEFAULT_ID_PLAYER);
     }
 
@@ -171,25 +176,6 @@ public class DietResourceIntTest {
 
     @Test
     @Transactional
-    public void checkIdPlayerIsRequired() throws Exception {
-        int databaseSizeBeforeTest = dietRepository.findAll().size();
-        // set the field null
-        diet.setIdPlayer(null);
-
-        // Create the Diet, which fails.
-        DietDTO dietDTO = dietMapper.toDto(diet);
-
-        restDietMockMvc.perform(post("/api/diets")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(dietDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<Diet> dietList = dietRepository.findAll();
-        assertThat(dietList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllDiets() throws Exception {
         // Initialize the database
         dietRepository.saveAndFlush(diet);
@@ -199,12 +185,13 @@ public class DietResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(diet.getId().intValue())))
-            .andExpect(jsonPath("$.[*].day").value(hasItem(DEFAULT_DAY.toString())))
-            .andExpect(jsonPath("$.[*].breakfast").value(hasItem(DEFAULT_BREAKFAST.toString())))
-            .andExpect(jsonPath("$.[*].snack").value(hasItem(DEFAULT_SNACK.toString())))
-            .andExpect(jsonPath("$.[*].lunch").value(hasItem(DEFAULT_LUNCH.toString())))
-            .andExpect(jsonPath("$.[*].snackAfternoon").value(hasItem(DEFAULT_SNACK_AFTERNOON.toString())))
-            .andExpect(jsonPath("$.[*].dinner").value(hasItem(DEFAULT_DINNER.toString())))
+            .andExpect(jsonPath("$.[*].monday").value(hasItem(DEFAULT_MONDAY.toString())))
+            .andExpect(jsonPath("$.[*].tuesday").value(hasItem(DEFAULT_TUESDAY.toString())))
+            .andExpect(jsonPath("$.[*].wednesday").value(hasItem(DEFAULT_WEDNESDAY.toString())))
+            .andExpect(jsonPath("$.[*].thursday").value(hasItem(DEFAULT_THURSDAY.toString())))
+            .andExpect(jsonPath("$.[*].friday").value(hasItem(DEFAULT_FRIDAY.toString())))
+            .andExpect(jsonPath("$.[*].saturday").value(hasItem(DEFAULT_SATURDAY.toString())))
+            .andExpect(jsonPath("$.[*].sunday").value(hasItem(DEFAULT_SUNDAY.toString())))
             .andExpect(jsonPath("$.[*].idPlayer").value(hasItem(DEFAULT_ID_PLAYER)));
     }
     
@@ -220,12 +207,13 @@ public class DietResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(diet.getId().intValue()))
-            .andExpect(jsonPath("$.day").value(DEFAULT_DAY.toString()))
-            .andExpect(jsonPath("$.breakfast").value(DEFAULT_BREAKFAST.toString()))
-            .andExpect(jsonPath("$.snack").value(DEFAULT_SNACK.toString()))
-            .andExpect(jsonPath("$.lunch").value(DEFAULT_LUNCH.toString()))
-            .andExpect(jsonPath("$.snackAfternoon").value(DEFAULT_SNACK_AFTERNOON.toString()))
-            .andExpect(jsonPath("$.dinner").value(DEFAULT_DINNER.toString()))
+            .andExpect(jsonPath("$.monday").value(DEFAULT_MONDAY.toString()))
+            .andExpect(jsonPath("$.tuesday").value(DEFAULT_TUESDAY.toString()))
+            .andExpect(jsonPath("$.wednesday").value(DEFAULT_WEDNESDAY.toString()))
+            .andExpect(jsonPath("$.thursday").value(DEFAULT_THURSDAY.toString()))
+            .andExpect(jsonPath("$.friday").value(DEFAULT_FRIDAY.toString()))
+            .andExpect(jsonPath("$.saturday").value(DEFAULT_SATURDAY.toString()))
+            .andExpect(jsonPath("$.sunday").value(DEFAULT_SUNDAY.toString()))
             .andExpect(jsonPath("$.idPlayer").value(DEFAULT_ID_PLAYER));
     }
     @Test
@@ -249,12 +237,13 @@ public class DietResourceIntTest {
         // Disconnect from session so that the updates on updatedDiet are not directly saved in db
         em.detach(updatedDiet);
         updatedDiet
-            .day(UPDATED_DAY)
-            .breakfast(UPDATED_BREAKFAST)
-            .snack(UPDATED_SNACK)
-            .lunch(UPDATED_LUNCH)
-            .snackAfternoon(UPDATED_SNACK_AFTERNOON)
-            .dinner(UPDATED_DINNER)
+            .monday(UPDATED_MONDAY)
+            .tuesday(UPDATED_TUESDAY)
+            .wednesday(UPDATED_WEDNESDAY)
+            .thursday(UPDATED_THURSDAY)
+            .friday(UPDATED_FRIDAY)
+            .saturday(UPDATED_SATURDAY)
+            .sunday(UPDATED_SUNDAY)
             .idPlayer(UPDATED_ID_PLAYER);
         DietDTO dietDTO = dietMapper.toDto(updatedDiet);
 
@@ -267,12 +256,13 @@ public class DietResourceIntTest {
         List<Diet> dietList = dietRepository.findAll();
         assertThat(dietList).hasSize(databaseSizeBeforeUpdate);
         Diet testDiet = dietList.get(dietList.size() - 1);
-        assertThat(testDiet.getDay()).isEqualTo(UPDATED_DAY);
-        assertThat(testDiet.getBreakfast()).isEqualTo(UPDATED_BREAKFAST);
-        assertThat(testDiet.getSnack()).isEqualTo(UPDATED_SNACK);
-        assertThat(testDiet.getLunch()).isEqualTo(UPDATED_LUNCH);
-        assertThat(testDiet.getSnackAfternoon()).isEqualTo(UPDATED_SNACK_AFTERNOON);
-        assertThat(testDiet.getDinner()).isEqualTo(UPDATED_DINNER);
+        assertThat(testDiet.getMonday()).isEqualTo(UPDATED_MONDAY);
+        assertThat(testDiet.getTuesday()).isEqualTo(UPDATED_TUESDAY);
+        assertThat(testDiet.getWednesday()).isEqualTo(UPDATED_WEDNESDAY);
+        assertThat(testDiet.getThursday()).isEqualTo(UPDATED_THURSDAY);
+        assertThat(testDiet.getFriday()).isEqualTo(UPDATED_FRIDAY);
+        assertThat(testDiet.getSaturday()).isEqualTo(UPDATED_SATURDAY);
+        assertThat(testDiet.getSunday()).isEqualTo(UPDATED_SUNDAY);
         assertThat(testDiet.getIdPlayer()).isEqualTo(UPDATED_ID_PLAYER);
     }
 
