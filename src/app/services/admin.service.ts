@@ -33,7 +33,7 @@ export class AdminService {
 
 
   getUsersList(): Observable<User[]> {
-    return this.http.get<Array<User>>('http://localhost:8080/User/userManagement?=')
+    return this.http.get<Array<User>>('http://localhost:8080/api/users')
         .pipe(tap((response) => console.log('User'), catchError(this.handleError('view error', {})))
         );
   }
