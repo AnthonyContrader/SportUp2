@@ -1,0 +1,14 @@
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.csproj.CoreCompileInputs.cache
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.AssemblyInfoInputs.cache
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.AssemblyInfo.cs
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\bin\Debug\netcoreapp2.2\SportUp.deps.json
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\bin\Debug\netcoreapp2.2\SportUp.runtimeconfig.json
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\bin\Debug\netcoreapp2.2\SportUp.runtimeconfig.dev.json
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\bin\Debug\netcoreapp2.2\SportUp.dll
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\bin\Debug\netcoreapp2.2\SportUp.pdb
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.csprojAssemblyReference.cache
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.RazorAssemblyInfo.cache
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.RazorAssemblyInfo.cs
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.RazorTargetAssemblyInfo.cache
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.dll
+C:\Users\Domenica\Documents\dotnet\SportUp\SportUp\obj\Debug\netcoreapp2.2\SportUp.pdb
