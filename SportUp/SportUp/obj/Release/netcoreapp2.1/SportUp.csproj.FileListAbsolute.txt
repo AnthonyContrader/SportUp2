@@ -1,0 +1,14 @@
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\bin\Release\netcoreapp2.1\SportUp.deps.json
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\bin\Release\netcoreapp2.1\SportUp.runtimeconfig.json
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\bin\Release\netcoreapp2.1\SportUp.runtimeconfig.dev.json
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\bin\Release\netcoreapp2.1\SportUp.dll
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\bin\Release\netcoreapp2.1\SportUp.pdb
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.csprojAssemblyReference.cache
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.csproj.CoreCompileInputs.cache
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.RazorAssemblyInfo.cache
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.RazorAssemblyInfo.cs
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.AssemblyInfoInputs.cache
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.AssemblyInfo.cs
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.RazorTargetAssemblyInfo.cache
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.dll
+C:\Users\orexo\Desktop\SportUp\SportUp\SportUp\obj\Release\netcoreapp2.1\SportUp.pdb
