@@ -4,14 +4,21 @@ export default class Footer extends Component {
     render() {
         return (
             <div>
-                <footer className="main-footer">
-                    <div className="pull-right hidden-xs">
-                        <b>Version</b> 0.1
-  </div>
-                    <strong>Copyright © 2018-2019 <a href="https://Contrader.it">SportUp</a>.</strong> All rights
+                <footer class="main-footer">
+                    <div class="pull-right hidden-xs">
+                        <b>Version</b> HHAHHHAH è stato fatto in mezza giornata 
+    </div>
+                    <strong>Copyright &copy; 06.08.19 al 06.08.19 <a href="https://Contrader.it">SportUp</a>.</strong> All rights
                     reserved.
-</footer>
 
+
+
+
+                Sviluppatori Sfruttati
+           <a>  Domenica Lella
+                Artem Matyushin
+          </a>
+                </footer>
             </div>
         )
     }
