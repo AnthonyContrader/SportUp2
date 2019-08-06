@@ -218,15 +218,15 @@ export default class Header extends Component {
                                 <li className="dropdown user user-menu">
                                     <a href="fake_url" className="dropdown-toggle" data-toggle="dropdown">
                                         <img src="dist/img/user2-160x160.jpg" className="user-image" alt="User" />
-                                        <span className="hidden-xs">Alexander Pierce</span>
+                                        <span className="hidden-xs">Artem Matyushin</span>
                                     </a>
                                     <ul className="dropdown-menu">
                                         {/* User image */}
                                         <li className="user-header">
                                             <img src="dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
                                             <p>
-                                                Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                                            Artem Matyushin - HoFame
+                  <small>Membro dal "Sempre"</small>
                                             </p>
                                         </li>
                                         {/* Menu Body */}

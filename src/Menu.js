@@ -10,10 +10,10 @@ export default class Menu extends Component {
                         {/* Sidebar user panel */}
                         <div className="user-panel">
                             <div className="pull-left image">
-                                <img src="dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
+                                <img src="dist/img/user3-128x128.jpg" className="img-circle" alt="User" />
                             </div>
                             <div className="pull-left info">
-                                <p>Alexander Pierce</p>
+                                <p>Artem Matyushin</p>
                                 <a href="fake_url"><i className="fa fa-circle text-success" /> Online</a>
                             </div>
                         </div>
