@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Prova extends Component {
+export default class BodyInerno extends Component {
   render() {
     return (
       <div>
@@ -12,7 +12,7 @@ export default class Prova extends Component {
         <small>Control panel</small>
             </h1>
             <ol className="breadcrumb">
-              <li><a href="#"><i className="fa fa-dashboard" /> Home</a></li>
+              <li><a href="fake_url"><i className="fa fa-dashboard" /> Home</a></li>
               <li className="active">Dashboard</li>
             </ol>
           </section>
@@ -30,7 +30,7 @@ export default class Prova extends Component {
                   <div className="icon">
                     <i className="ion ion-bag" />
                   </div>
-                  <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
+                  <a href="fake_url" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
                 </div>
               </div>
               {/* ./col */}
@@ -44,7 +44,7 @@ export default class Prova extends Component {
                   <div className="icon">
                     <i className="ion ion-stats-bars" />
                   </div>
-                  <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
+                  <a href="fake_url" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
                 </div>
               </div>
               {/* ./col */}
@@ -58,7 +58,7 @@ export default class Prova extends Component {
                   <div className="icon">
                     <i className="ion ion-person-add" />
                   </div>
-                  <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
+                  <a href="fake_url" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
                 </div>
               </div>
               {/* ./col */}
@@ -72,7 +72,7 @@ export default class Prova extends Component {
                   <div className="icon">
                     <i className="ion ion-pie-graph" />
                   </div>
-                  <a href="#" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
+                  <a href="fake_url" className="small-box-footer">More info <i className="fa fa-arrow-circle-right" /></a>
                 </div>
               </div>
 
@@ -94,11 +94,11 @@ export default class Prova extends Component {
                     <h3 className="box-title">To Do List</h3>
                     <div className="box-tools pull-right">
                       <ul className="pagination pagination-sm inline">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
+                        <li><a href="fake_url">«</a></li>
+                        <li><a href="fake_url">1</a></li>
+                        <li><a href="fake_url">2</a></li>
+                        <li><a href="fake_url">3</a></li>
+                        <li><a href="fake_url">»</a></li>
                       </ul>
                     </div>
                   </div>
@@ -231,10 +231,10 @@ export default class Prova extends Component {
                         <button type="button" className="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
                           <i className="fa fa-bars" /></button>
                         <ul className="dropdown-menu pull-right" role="menu">
-                          <li><a href="#">Add new event</a></li>
-                          <li><a href="#">Clear events</a></li>
+                          <li><a href="fake_url">Add new event</a></li>
+                          <li><a href="fake_url">Clear events</a></li>
                           <li className="divider" />
-                          <li><a href="#">View calendar</a></li>
+                          <li><a href="fake_url">View calendar</a></li>
                         </ul>
                       </div>
                       <button type="button" className="btn btn-success btn-sm" data-widget="collapse"><i className="fa fa-minus" />

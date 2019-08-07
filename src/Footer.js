@@ -15,9 +15,8 @@ export default class Footer extends Component {
 
 
                 Sviluppatori Sfruttati
-           <a>  Domenica Lella
-                Artem Matyushin
-          </a>
+           <a>  Domenica Lella          Artem Matyushin
+           </a>
                 </footer>
             </div>
         )
