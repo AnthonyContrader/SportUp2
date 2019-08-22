@@ -15,12 +15,17 @@ class Snippet(models.Model):
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
-    class Meta:
-        ordering = ['created']
+   
+
+    def __str__(self):
+        return self.title
 
 
 class Prova(models.Model):
     libro = models.ForeignKey('Snippet', on_delete=models.CASCADE)
     trama = models.CharField(max_length=100, blank=True, default='')
     lingua = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
+
+    def __str__(self):
+        return self.libro
     
