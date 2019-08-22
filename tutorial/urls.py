@@ -20,8 +20,9 @@ from django.contrib.auth.models import User,Group
 from rest_framework import routers, serializers, viewsets
 
 from django.contrib import admin
-from snippets.models import Snippet
-from snippets.models import Prova 
+from snippets.models import Dieta
+from snippets.models import Allenamento 
+from snippets.models import Utenti
 
 
 
@@ -36,20 +37,27 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'username', 'email', 'is_staff']
 
 
-class SnippetSerializer(serializers.HyperlinkedModelSerializer):
+class DietaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
 
-        model = Snippet
+        model = Dieta
 
-        fields = ['url', 'created', 'title', 'code', 'linenos', 'language', 'style' ]
+        fields = ['url', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab' ]
 
 
-class ProvaSerializer(serializers.HyperlinkedModelSerializer):
+class AllenamentoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
 
-        model = Prova
+        model = Allenamento
 
-        fields = ['url', 'libro', 'trama', 'lingua' ]
+        fields = ['url', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab' ]
+
+class UtentiSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+
+        model = Utenti
+
+        fields = ['url', 'nome', 'cognome', 'ruolo' ]
 
 
 
@@ -75,16 +83,21 @@ class UserViewSet(viewsets.ModelViewSet):
 
     serializer_class = UserSerializer
 
-class SnippetViewSet(viewsets.ModelViewSet):
-    queryset = Snippet.objects.all()
+class DietaViewSet(viewsets.ModelViewSet):
+    queryset = Dieta.objects.all()
 
-    serializer_class = SnippetSerializer
+    serializer_class = DietaSerializer
 
 
-class ProvaViewSet(viewsets.ModelViewSet):
-    queryset = Prova.objects.all()
+class AllenamentoViewSet(viewsets.ModelViewSet):
+    queryset = Allenamento.objects.all()
 
-    serializer_class = ProvaSerializer
+    serializer_class = AllenamentoSerializer
+
+class UtentiViewSet(viewsets.ModelViewSet):
+    queryset = Utenti.objects.all()
+
+    serializer_class = UtentiSerializer
 
 class GroupViewSet(viewsets.ModelViewSet):
 
@@ -106,9 +119,11 @@ router.register(r'users', UserViewSet)
 
 router.register(r'groups', GroupViewSet)
 
-router.register(r'snippet', SnippetViewSet)
+router.register(r'dieta', DietaViewSet)
 
-router.register(r'prova', ProvaViewSet)
+router.register(r'allenamento', AllenamentoViewSet)
+
+router.register(r'utenti', UtentiViewSet)
 
 
 

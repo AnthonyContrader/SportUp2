@@ -1,8 +1,10 @@
 from django.contrib import admin
-from .models import Snippet
-from .models import Prova 
+from .models import Dieta
+from .models import Allenamento 
+from .models import Utenti
 
-admin.site.register(Snippet)
-admin.site.register(Prova)
+admin.site.register(Dieta)
+admin.site.register(Allenamento)
+admin.site.register(Utenti)
 
 # Register your models here.
