@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ allenamenti.allenamento }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ allenamenti.allenamento }}</h1>
+    <p>{{ allenamenti.info }}</p>
+    
+    <hr>
+    <a href="/">Go Back</a>
+{% endblock %}

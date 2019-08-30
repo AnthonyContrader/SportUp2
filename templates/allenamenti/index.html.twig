@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} allenamenti
+{% endblock %}
+
+{% block body %}
+    {% if allenamenti %}
+        <table class="table table-striped" id="allenamenti">
+            <thead>
+                <tr>
+                    <th>Allenamenti Title</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for allenamenti in allenamenti %}
+                    <tr>
+                        <td>{{ allenamenti.allenamento }}</td>
+                        <td>{{ allenamenti.info }}</td>
+                        <td>
+                            <a class="btn btn-dark" href="/allenamenti/{{ allenamenti.id }}">Show</a>
+                            <a class="btn btn-light" href="/allenamenti/edit/{{ allenamenti.id }}">Edit</a>
+                            <a href="#" class="btn btn-danger delete-allenamenti" data-id="{{ allenamenti.id }}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Non ci sono allenamenti </p>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main.js"></script>
+{% endblock %}
